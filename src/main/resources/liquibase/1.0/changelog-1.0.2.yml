@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Guides Table
+      author: Shamil Vasanov
+      changes:
+        - createTable:
+            tableName: guides
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+            remarks: Table to store information about guides

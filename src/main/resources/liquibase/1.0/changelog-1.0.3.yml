@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Passport Table
+      author: Shamil Vasanov
+      changes:
+        - createTable:
+            tableName: passport
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: passport_number
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: issue_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expiry_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+            remarks: Table to store information about passports

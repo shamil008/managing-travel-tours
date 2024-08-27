@@ -1,0 +1,75 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  addForeignKeyConstraint-tour_destination
+       author:  Shamil Vasanov
+       changes:
+         -  addForeignKeyConstraint:
+              baseColumnNames: tour_id
+              baseTableName:  destinations
+              constraintName:  fk_tour_destination
+              onDelete:  CASCADE
+              onUpdate:  RESTRICT
+              referencedColumnNames:  id
+              referencedTableName:  tours
+  - changeSet:
+      id: addForeignKeyConstraint-guides_tour_guide
+      author: Shamil Vasanov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: guide_id
+            baseTableName: tour_guide
+            constraintName: fk_guides_tour_guide
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: guides
+  - changeSet:
+      id: addForeignKeyConstraint-tours_tour_guide
+      author: Shamil Vasanov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: tour_id
+            baseTableName: tour_guide
+            constraintName: fk_tours_tour_guide
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: tours
+
+  - changeSet:
+      id: addForeignKeyConstraint-guide_passport
+      author: Shamil Vasanov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: passport
+            constraintName: fk_guide_passport
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: guides
+
+  - changeSet:
+      id: addForeignKeyConstraint-tours_tour_traveller
+      author: Shamil Vasanov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: tour_id
+            baseTableName: tour_traveller
+            constraintName: fk_tours_tour_traveller
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: tours
+  - changeSet:
+      id: addForeignKeyConstraint-travellers_tour_traveller
+      author: Shamil Vasanov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traveller_id
+            baseTableName: tour_traveller
+            constraintName: fk_travellers_tour_traveller
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: travellers

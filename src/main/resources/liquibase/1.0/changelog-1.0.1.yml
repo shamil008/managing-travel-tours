@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Destinations Table
+      author: Shamil Vasanov
+      changes:
+        - createTable:
+            tableName: destinations
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: location
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: visit_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tour_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+            remarks: Table to store information about destinations
