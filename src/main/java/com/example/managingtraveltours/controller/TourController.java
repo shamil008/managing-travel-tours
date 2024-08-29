@@ -22,4 +22,10 @@ public class TourController {
         tourService.createTours(request);
     }
 
+    @PostMapping("/add")
+    @ResponseStatus(CREATED)
+    public void assignGuideToTour(@RequestParam Long tourId,@RequestParam Long guideId){
+        tourService.assignGuideToTour(tourId,guideId);
+    }
+
 }

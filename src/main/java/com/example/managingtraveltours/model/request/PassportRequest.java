@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -12,9 +13,9 @@ import java.time.LocalDateTime;
 public class PassportRequest {
     private String passportNumber;
 
-    private LocalDateTime issueDate;
+    private Date issueDate;
 
-    private LocalDateTime expiryDate;
+    private Date expiryDate;
 
     private String country;
 }

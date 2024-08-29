@@ -3,6 +3,8 @@ package com.example.managingtraveltours.dao.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 import static jakarta.persistence.CascadeType.ALL;
 import static jakarta.persistence.FetchType.LAZY;
 import static jakarta.persistence.GenerationType.IDENTITY;
@@ -34,4 +36,6 @@ public class GuideEntity {
     )
     @ToString.Exclude
     private PassportEntity passport;
+    @ManyToMany(mappedBy = "guides")
+    private List<TourEntity> tours;
 }

@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Fetch;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import static jakarta.persistence.FetchType.LAZY;
 
@@ -24,9 +25,9 @@ public class PassportEntity {
 
     private String passportNumber;
 
-    private LocalDateTime issueDate;
+    private Date issueDate;
 
-    private LocalDateTime expiryDate;
+    private Date expiryDate;
 
     private String country;
 

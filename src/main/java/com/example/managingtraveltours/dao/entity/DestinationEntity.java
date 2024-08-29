@@ -10,6 +10,7 @@ import org.hibernate.annotations.Fetch;
 import javax.annotation.processing.Generated;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import static jakarta.persistence.FetchType.LAZY;
 import static jakarta.persistence.GenerationType.IDENTITY;
@@ -33,7 +34,7 @@ public class DestinationEntity {
 
     private String description;
 
-    private LocalDateTime visitDate;
+    private Date visitDate;
 
     @ManyToOne(fetch = LAZY)
     @ToString.Exclude

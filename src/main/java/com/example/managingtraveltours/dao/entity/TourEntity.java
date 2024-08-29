@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import static jakarta.persistence.CascadeType.ALL;
@@ -32,10 +33,10 @@ public class TourEntity {
 
     private BigDecimal price;
 
-    private LocalDateTime startDate;
+    private Date startDate;
 
 
-    private  LocalDateTime endDate;
+    private  Date endDate;
 
     @OneToMany(
             mappedBy = "tour",
